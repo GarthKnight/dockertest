@@ -48,16 +48,17 @@ jobs:
           #          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          cd sender/
-          docker build -t $DOCKER_SENDER_REPOSITORY:$IMAGE_TAG .
-          docker push $DOCKER_SENDER_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$DOCKER_SENDER_REPOSITORY:$IMAGE_TAG"
-          cd ../receiver
-          docker build -t $DOCKER_RECEIVER_REPOSITORY:$IMAGE_TAG .
-          docker push $DOCKER_RECEIVER_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$DOCKER_RECEIVER_REPOSITORY:$IMAGE_TAG"
-          
+#          cd sender/
+#          docker build -t $DOCKER_SENDER_REPOSITORY:$IMAGE_TAG .
+#          docker push $DOCKER_SENDER_REPOSITORY:$IMAGE_TAG
+#          echo "::set-output name=image::$DOCKER_SENDER_REPOSITORY:$IMAGE_TAG"
+#          cd ../receiver
+#          docker build -t $DOCKER_RECEIVER_REPOSITORY:$IMAGE_TAG .
+#          docker push $DOCKER_RECEIVER_REPOSITORY:$IMAGE_TAG
+#          echo "::set-output name=image::$DOCKER_RECEIVER_REPOSITORY:$IMAGE_TAG"
+#
           cat $DEPLOYMENT_PATH | sed "s/TAG/${IMAGE_TAG}/g" > $DEPLOYMENT_FILE_NAME
+          ls -al
           cd ../
           
 
