@@ -4,7 +4,7 @@ version: '3.9'
 services:
 
   # App Service
-  app:
+  sender:
     # Configuration for building the docker image for the service
     build:
       context: ./sender # Use an image built from the specified dockerfile in the current directory.
