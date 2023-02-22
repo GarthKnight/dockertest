@@ -74,4 +74,4 @@ jobs:
           host: ${{ secrets.DOCKERTEST_HOST }}
           username: ${{ secrets.DOCKERTEST_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWD }}
-          script: docker compose up -d -f ${{ env.REMOTE_SERVER_PATH_DIR }}/${{ env.DEPLOYMENT_FILE_NAME }}
+          script: docker compose -f ${{ env.REMOTE_SERVER_PATH_DIR }}/${{ env.DEPLOYMENT_FILE_NAME }} up -d
